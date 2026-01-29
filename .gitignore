@@ -1,43 +1,37 @@
+# [Build Tools] - 빌드 결과물 제외
 .gradle
 build/
-!gradle/wrapper/gradle-wrapper.jar
-!**/src/main/**/build/
-!**/src/test/**/build/
-.kotlin
-
-### IntelliJ IDEA ###
-.idea/modules.xml
-.idea/jarRepositories.xml
-.idea/compiler.xml
-.idea/libraries/
-*.iws
-*.iml
-*.ipr
-out/
-!**/src/main/**/out/
-!**/src/test/**/out/
-
-### Eclipse ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
 bin/
-!**/src/main/**/bin/
-!**/src/test/**/bin/
+out/
 
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
-
-### VS Code ###
+# [IDE] - 각자 쓰는 툴 설정 파일은 올리지 않음 (팀원끼리 설정 충돌 방지)
+.idea/
+*.iml
+*.iws
+*.ipr
 .vscode/
+.classpath
+.project
+.settings/
+.nb-gradle/
 
-### Mac OS ###
+# [OS] - 운영체제 임시 파일
 .DS_Store
+Thumbs.db
+
+# [Secrets] - 가장 중요!!! API 키 노출 방지
+# 프로젝트에서 키 전용 파일을 만들 때 아래 이름 중 하나로 만드세요.
+.env
+*secret*
+application-api.yml
+application-local.yml
+
+# [Exception] - 하지만 이건 꼭 올라가야 함 (프로젝트 구조 유지)
+!**/src/main/**
+!**/src/test/**
+!build.gradle
+!settings.gradle
+!gradlew
+!gradlew.bat
+!gradle/wrapper/gradle-wrapper.jar
+!gradle/wrapper/gradle-wrapper.properties
