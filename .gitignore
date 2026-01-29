@@ -1,10 +1,10 @@
-# [Build Tools] - 빌드 결과물 제외
+# [Build Tools]
 .gradle
 build/
 bin/
 out/
 
-# [IDE] - 각자 쓰는 툴 설정 파일은 올리지 않음 (팀원끼리 설정 충돌 방지)
+# [IDE]
 .idea/
 *.iml
 *.iws
@@ -15,18 +15,11 @@ out/
 .settings/
 .nb-gradle/
 
-# [OS] - 운영체제 임시 파일
+# [OS]
 .DS_Store
 Thumbs.db
 
-# [Secrets] - 가장 중요!!! API 키 노출 방지
-# 프로젝트에서 키 전용 파일을 만들 때 아래 이름 중 하나로 만드세요.
-.env
-*secret*
-application-api.yml
-application-local.yml
-
-# [Exception] - 하지만 이건 꼭 올라가야 함 (프로젝트 구조 유지)
+# [Exception] - 공통 파일 먼저 등록
 !**/src/main/**
 !**/src/test/**
 !build.gradle
@@ -35,3 +28,11 @@ application-local.yml
 !gradlew.bat
 !gradle/wrapper/gradle-wrapper.jar
 !gradle/wrapper/gradle-wrapper.properties
+
+# [Secrets] - 마지막에 선언해서 예외 규칙보다 우선순위를 갖게 함
+.env
+*secret*
+application-api.yml
+application-local.yml
+application-api.properties
+application-local.properties
